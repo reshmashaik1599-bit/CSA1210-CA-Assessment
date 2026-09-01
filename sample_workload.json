@@ -1,0 +1,32 @@
+{
+  "job_id": "JOB-AI-2026-001",
+  "num_images": 500,
+  "image_size_kb": 256,
+  "instructions": [
+    {"inst_id": "I1",  "operation": "LOAD",   "src_regs": [],        "dest_reg": "R1", "mem_address": 4096},
+    {"inst_id": "I2",  "operation": "LOAD",   "src_regs": [],        "dest_reg": "R2", "mem_address": 4160},
+    {"inst_id": "I3",  "operation": "ADD",    "src_regs": ["R1","R2"], "dest_reg": "R3", "mem_address": null},
+    {"inst_id": "I4",  "operation": "MUL",    "src_regs": ["R3","R3"], "dest_reg": "R4", "mem_address": null},
+    {"inst_id": "I5",  "operation": "STORE",  "src_regs": ["R4"],    "dest_reg": null, "mem_address": 8192},
+    {"inst_id": "I6",  "operation": "LOAD",   "src_regs": [],        "dest_reg": "R5", "mem_address": 4224},
+    {"inst_id": "I7",  "operation": "BRANCH", "src_regs": ["R5"],    "dest_reg": null, "mem_address": null},
+    {"inst_id": "I8",  "operation": "LOAD",   "src_regs": [],        "dest_reg": "R6", "mem_address": 4096},
+    {"inst_id": "I9",  "operation": "SUB",    "src_regs": ["R6","R5"], "dest_reg": "R7", "mem_address": null},
+    {"inst_id": "I10", "operation": "STORE",  "src_regs": ["R7"],    "dest_reg": null, "mem_address": 8256},
+    {"inst_id": "I11", "operation": "LOAD",   "src_regs": [],        "dest_reg": "R8", "mem_address": 16384},
+    {"inst_id": "I12", "operation": "ADD",    "src_regs": ["R8","R7"], "dest_reg": "R9", "mem_address": null},
+    {"inst_id": "I13", "operation": "STORE",  "src_regs": ["R9"],    "dest_reg": null, "mem_address": 8320},
+    {"inst_id": "I14", "operation": "BRANCH", "src_regs": ["R9"],    "dest_reg": null, "mem_address": null},
+    {"inst_id": "I15", "operation": "LOAD",   "src_regs": [],        "dest_reg": "R10","mem_address": 4160}
+  ],
+  "cache_config": [
+    {"name": "L1", "size_kb": 32,  "block_size_b": 64, "latency_cycles": 1},
+    {"name": "L2", "size_kb": 256, "block_size_b": 64, "latency_cycles": 8},
+    {"name": "L3", "size_kb": 2048,"block_size_b": 64, "latency_cycles": 25}
+  ],
+  "main_memory_latency_cycles": 100,
+  "io_config": {
+    "transfer_rate_kbps": 50000,
+    "num_requests": 500
+  }
+}
